@@ -1,18 +1,24 @@
 # Module 2: Section Loop
 
+**Change Log (Set 3):**  
+- Added `summary_level` ("short", "detailed").  
+- Added conditional behavior for different summary modes.
+
 ## Inputs
-- Normalized section list.
-- Section text chunks.
+- Normalized section list  
+- Section text chunks  
+- `summary_level` ("short" / "detailed")
 
 ## Outputs
-- Concise summary (≤ 100 words) for each section.
+- Per-section summary (format depends on summary_level)
 
-## Internal Processing Rules
-- Summarize each section individually.
-- Apply strict word limit.
-- Maintain neutral tone.
-- Ensure summaries are faithful to the text.
+## Rules
+### If summary_level = "short":
+- Produce 1–2 sentence compact summary.
+
+### If summary_level = "detailed":
 
 ## Constraints
-- No invented content.
-- If section text is empty, output "No content available" and flag in "Checks & Warnings."
+- No hallucinations  
+- Maintain neutral tone
+- Max 100 words per section.  
